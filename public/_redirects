@@ -1,0 +1,3 @@
+# Cloudflare Pages serves every page without .html automatically (/ur, /terms, /qr-menu-usa ...).
+# Only the guest menu needs a rewrite: /m/<restaurant-name>  ->  menu page
+/m/*  /menu  200

@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard
+Disallow: /admin
+Disallow: /api/
+Disallow: /m/
+
+Sitemap: https://www.menuloom.online/sitemap.xml

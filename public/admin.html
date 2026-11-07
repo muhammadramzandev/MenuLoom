@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Admin – MenuLoom</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap"><link rel="stylesheet" href="/app.css"></head><body>
+<div class="wrap"><nav><a class="logo" href="/">MenuLoom admin</a><button id="out" class="btn sm ghost hide">Log out</button></nav>
+<div id="login" class="authbox card"><h2>Welcome to MenuLoom</h2><p class="mut">Sign in or create your restaurant account.</p>
+<div class="seg"><button id="tin" class="on">Sign in</button><button id="tup">Create account</button></div>
+<label>Email<input id="em" type="email" autocomplete="email"></label><label>Password<span class="pwbox"><input id="pw1" type="password" autocomplete="current-password"><button type="button" id="eye" class="eye">Show</button></span></label>
+<label id="cw" class="hide">Confirm password<input id="pw2" type="password" autocomplete="new-password"></label>
+<button id="go" class="btn gold" style="width:100%">Sign in</button><p style="text-align:right;margin-top:10px"><a href="#" id="fg" class="mut" onclick="return false">Forgot password?</a></p>
+<div class="or">or</div><button id="g" class="btn ghost" style="width:100%">Continue with Google</button><p id="amsg" class="amsg"></p></div>
+<div id="app" class="hide"><div class="stats" id="stats"></div>
+<div class="card"><h3>Restaurants</h3><p class="mut" style="margin:6px 0 12px">Download sitemap.xml, replace the one in your folder, then redeploy so Google finds every menu.</p><button id="sm" class="btn sm gold" style="margin-bottom:12px">Download sitemap.xml</button><br><input id="q" placeholder="Search by name, link or email"><div class="scroll"><table id="rt"></table></div></div>
+<div class="card" id="annc"><h3>📢 Announcements to owners</h3><p class="mut" style="margin:6px 0 12px">Write a message. It appears at the top of every owner's dashboard (they can close it) and in their Announcements page.</p>
+<div class="afo"><label>Title<input id="an_t" maxlength="80"></label><label>Type<select id="an_ty"><option value="info">ℹ️ Information</option><option value="promo">🎁 Offer</option><option value="warn">⚠️ Important</option></select></label></div>
+<label>Message<textarea id="an_m" maxlength="500" rows="3"></textarea></label>
+<div class="afo"><label>Who sees it<select id="an_a"><option value="all">All owners</option><option value="free">Free plan only</option><option value="pro">Pro plan only</option></select></label><label>Language of owner<select id="an_l"><option value="all">All languages</option><option value="en">English</option><option value="ur">اردو</option><option value="ar">العربية</option><option value="zh">中文</option><option value="hi">हिन्दी</option><option value="es">Español</option><option value="fr">Français</option></select></label><label>Hide after (days, 0 = never)<input id="an_d" type="number" min="0" value="0"></label></div>
+<button id="an_p" class="btn gold">Publish announcement</button><p id="an_msg" class="mut" style="margin:8px 0"></p><div class="scroll"><table id="ant"></table></div></div>
+<div class="card"><h3>Feedback from owners — only the ones you Approve are shown on the home page</h3><br><div class="scroll"><table id="fbt"></table></div></div>
+<div class="card"><h3>Contact messages</h3><br><div class="scroll"><table id="cmt"></table></div></div>
+<div class="card"><h3>All payments</h3><br><div class="scroll"><table id="pay"></table></div></div></div></div>
+<script type="module" src="/admin.js"></script></body></html>

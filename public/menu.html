@@ -1,0 +1,86 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Menu</title><meta name="theme-color" content="#0c1f1b">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://firestore.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;700;800&display=swap">
+<style>
+*{box-sizing:border-box}body{--bg:#f6f1e7;--fg:#12201c;--ac:#8a6422;--cd:#fff;--mu:#66756f;--on:#fff;margin:0;font:16px/1.5 Manrope,system-ui,sans-serif;background:var(--bg);color:var(--fg);padding-bottom:96px}
+body[data-t=noir]{--bg:#0a1512;--fg:#f3ecdc;--ac:#d4b26a;--cd:#12231e;--mu:#94a39c;--on:#0c1f1b}
+body[data-t=fresh]{--bg:#eef5f1;--fg:#0c2a22;--ac:#14473b;--cd:#fff;--mu:#5b7a6c}
+header{padding:26px 18px 12px;max-width:720px;margin:auto}h1{font:700 clamp(40px,11vw,64px)/.95 'Cormorant Garamond',serif;margin:14px 0 8px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px}#lg{height:46px;border-radius:10px;display:none}
+#lang{margin-left:auto;border:1.5px solid var(--mu);background:var(--cd);color:var(--fg);padding:7px 12px;border-radius:99px;font:700 13px Manrope,sans-serif}
+#ad{margin:0 0 6px;color:var(--mu);font-size:14px}#tb{display:none;background:var(--ac);color:var(--on);font-weight:800;font-size:13px;padding:4px 12px;border-radius:99px;margin-bottom:10px}
+#q{width:100%;padding:13px 18px;border-radius:99px;border:1.5px solid var(--mu);background:var(--cd);color:var(--fg);font:inherit}
+#tabs{display:flex;gap:8px;overflow-x:auto;padding:12px 18px;max-width:720px;margin:auto;position:sticky;top:0;background:var(--bg);scrollbar-width:none;z-index:2}
+#tabs button{flex:none;border:1.5px solid var(--mu);background:none;color:var(--fg);padding:8px 16px;border-radius:99px;font:700 14px Manrope,sans-serif;cursor:pointer}
+#tabs button.on{background:var(--ac);border-color:var(--ac);color:var(--on)}
+main{max-width:720px;margin:auto;padding:0 18px}h2{font:700 32px 'Cormorant Garamond',serif;margin:26px 0 10px}
+.it{display:flex;gap:14px;background:var(--cd);border-radius:18px;padding:12px;margin-bottom:12px;align-items:center;box-shadow:0 14px 28px -24px #000}.it img{width:88px;height:88px;border-radius:13px;object-fit:cover;flex:none;background:#0001}
+.it>div:first-of-type{flex:1;min-width:0}.it p{margin:2px 0 4px;color:var(--mu);font-size:14px}.it b{font-size:17px}.pr{font-weight:800;color:var(--ac)}
+.q{display:flex;align-items:center;gap:8px;flex:none}.q button{width:38px;height:38px;border-radius:50%;border:0;background:var(--ac);color:var(--on);font-size:22px;line-height:1;cursor:pointer}
+.q .mn{background:none;color:var(--ac);box-shadow:inset 0 0 0 1.5px var(--ac)}.q .n{font-weight:800;min-width:14px;text-align:center}.q:not(.on) .mn,.q:not(.on) .n{display:none}
+.sold{opacity:.55}.sold .q{display:none}.view .q{display:none}
+#bar{position:fixed;left:14px;right:14px;bottom:14px;max-width:692px;margin:auto;background:var(--ac);color:var(--on);border:0;border-radius:99px;padding:16px;font:800 15px Manrope,sans-serif;cursor:pointer;display:none;box-shadow:0 18px 30px -14px #000a}
+.hide{display:none!important}.gbd{display:inline-block;margin-inline-start:8px;background:var(--cd);color:var(--ac);font-weight:800;font-size:13px;padding:4px 12px;border-radius:99px}.gbtn{display:block;text-align:center;text-decoration:none;margin:10px 0}.rvs{max-width:720px;margin:20px auto;padding:0 18px}.rva{font-weight:800;color:var(--ac);margin-bottom:10px}.rvi{background:var(--cd);border-radius:14px;padding:12px;margin-bottom:8px}.rvi b{color:var(--ac)}.rvi p{margin:4px 0 0}#rvf{display:grid;gap:8px;margin-top:12px}#rvf input,#rvf textarea{padding:12px 14px;border-radius:12px;border:1.5px solid var(--mu);background:var(--cd);color:var(--fg);font:inherit}.rst{display:flex;gap:4px}.rst button{border:0;background:none;font-size:32px;color:var(--mu);cursor:pointer;padding:0}.rst button.on{color:var(--ac)}.rbtn{border:0;border-radius:99px;background:var(--ac);color:var(--on);padding:13px;font:800 15px Manrope,sans-serif;cursor:pointer}#ok{display:none;position:fixed;top:14px;inset-inline:14px;max-width:560px;margin:auto;background:var(--ac);color:var(--on);padding:14px 18px;border-radius:14px;font-weight:800;text-align:center;z-index:9}
+.wl{margin:16px 0 0;font:800 12px Manrope,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--ac)}.wl:empty{display:none}.wl+h1{margin-top:6px}
+.vt{display:flex;gap:8px;margin:14px 0 12px}.vt.hide{display:none!important}.vt button{flex:1;border:1.5px solid var(--ac);background:none;color:var(--ac);padding:11px 14px;border-radius:99px;font:800 14px Manrope,sans-serif;cursor:pointer;transition:background .15s,color .15s}.vt button.on{background:var(--ac);color:var(--on)}
+.pw{text-align:center;padding:30px;color:var(--mu);font-size:13px}.empty{color:var(--mu);padding:30px 0;text-align:center}:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+@media(max-width:380px){.it img{width:70px;height:70px}}
+</style><script defer src="/site.js"></script></head><body><header><div class="top"><img id="lg" alt="" width="46" height="46"><select id="lang" aria-label="Language"></select></div><p id="wl" class="wl"></p><h1 id="nm">&nbsp;</h1><p id="ad"></p><span id="tb"></span><span id="gb" class="gbd hide"></span><div id="vt" class="vt hide" role="tablist"><button type="button" id="vm" class="on" role="tab" aria-selected="true"></button><button type="button" id="vr" role="tab" aria-selected="false"></button></div><input id="q" aria-label="Search"></header><div id="tabs"></div><main id="m"></main><section id="rv" class="rvs hide"><h2 id="rvh"></h2><div id="rva" class="rva"></div><a id="gbtn" class="rbtn gbtn hide" target="_blank" rel="noopener noreferrer"></a><div id="rvl"></div><form id="rvf"><div id="rvst" class="rst"></div><input id="rvn" maxlength="40"><textarea id="rvt" maxlength="500" rows="3"></textarea><button id="rvs" class="rbtn" type="submit"></button></form></section><div id="ok"></div><button id="bar"></button><div class="pw" id="pw"></div>
+<script type="module">
+import {db} from '/config.js';
+import {LANGS,ML,RTL,lang,tr,dt,setLang} from '/i18n.js';
+let REV=[],stars=0,V=location.hash==='#reviews'?'r':'m';
+import {doc,getDoc,getDocs,collection,addDoc,setDoc,updateDoc,increment,query,orderBy,limit} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+const P=new URLSearchParams(location.search),slug=(decodeURIComponent((location.pathname.split('/m/')[1]||'').split('/')[0])||P.get('r')||'').toLowerCase().replace(/[^a-z0-9-]/g,''),tbl=(P.get('t')||'').replace(/[^0-9A-Za-z-]/g,'').slice(0,8),$=i=>document.getElementById(i),cart={};
+let R,items=[],cat='All',L=lang(),ord=false,seoDone=false;
+const ck='m_'+slug,pro=r=>r.plan==='pro'&&(!r.planUntil||r.planUntil>Date.now()),BL=()=>(R&&R.lang)||'en',OT=()=>(R&&R.orderTo)||'whatsapp',nm=i=>L===BL()?i.name:((i.tr&&i.tr[L]&&i.tr[L].n)||(L==='ur'&&i.nameUr)||i.name),ds=i=>L===BL()?(i.desc||''):((i.tr&&i.tr[L]&&i.tr[L].d)||i.desc||''),rn=()=>L===BL()?R.name:((R.names&&R.names[L])||(L==='ur'&&R.nameUr)||R.name);
+$('lang').innerHTML=Object.entries(ML).map(([k,v])=>`<option value="${k}">${v}</option>`).join('');
+function setL(){document.documentElement.lang=({zt:'zh-Hant',no:'nb'})[L]||L;document.documentElement.dir=RTL.includes(L)?'rtl':'ltr';$('lang').value=L;$('q').placeholder=tr('search',L);if(R)$('nm').textContent=rn();$('tb').textContent=tr('table',L)+' '+tbl;$('wl').textContent=R?dt('m_wel',L):'';$('vm').textContent=dt('m_menu',L);$('vr').textContent=dt('rev_title',L)}
+$('lang').onchange=e=>{L=e.target.value;setLang(L);setL();if(R){draw();bar();reviews()}};setL();
+function fail(t,d){const m=document.createElement('meta');m.name='robots';m.content='noindex';document.head.append(m);$('nm').textContent=t;$('ad').textContent=d||'';$('q').style.display='none'}
+const meta=(k,v,a)=>{let m=document.head.querySelector(`meta[${a||'name'}="${k}"]`);if(!m){m=document.createElement('meta');m.setAttribute(a||'name',k);document.head.append(m)}m.content=v};
+function seo(){if(seoDone)return;seoDone=true;const url=location.origin+'/m/'+slug,t=R.name+' Menu'+(R.address?' - '+R.address:''),av=items.filter(i=>i.avail!==false),d=(R.name+' menu: '+av.length+' dishes'+(av.length?' including '+av.slice(0,3).map(i=>i.name).join(', '):'')+'.').slice(0,300);
+ document.title=t;meta('description',d);meta('og:title',t,'property');meta('og:description',d,'property');meta('og:url',url,'property');meta('og:type','restaurant.menu','property');meta('keywords',[R.name,'menu',...new Set(av.map(i=>i.cat))].join(', '));meta('robots','index,follow');meta('og:site_name','MenuLoom','property');meta('twitter:card','summary');if(R.logo&&!R.logo.startsWith('data:'))meta('og:image',R.logo,'property');
+ const l=document.createElement('link');l.rel='canonical';l.href=url;document.head.append(l);
+ const cur=/^[A-Za-z]{3}$/.test(R.currency)?R.currency.toUpperCase():(/^rs/i.test(R.currency)?'PKR':undefined),by={};av.forEach(i=>(by[i.cat]=by[i.cat]||[]).push(i));
+ const ld={'@context':'https://schema.org','@type':'Restaurant',name:R.name,url,address:R.address||undefined,image:R.logo&&!R.logo.startsWith('data:')?R.logo:undefined,hasMenu:{'@type':'Menu',hasMenuSection:Object.keys(by).map(c=>({'@type':'MenuSection',name:c,hasMenuItem:by[c].map(i=>({'@type':'MenuItem',name:i.name,description:i.desc||undefined,offers:{'@type':'Offer',price:String(i.price),priceCurrency:cur}}))}))}};
+ if(REV.length&&ord)ld.aggregateRating={'@type':'AggregateRating',ratingValue:(REV.reduce((a,r)=>a+r.rating,0)/REV.length).toFixed(1),reviewCount:REV.length};const s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify(ld);document.head.append(s)}
+const slotNo=id=>/^s(\d+)$/.test(id)?+RegExp.$1:9999;
+function start(d){R=d.R;REV=d.rev||[];ord=pro(R);items=ord?d.items:[...d.items].sort((a,b)=>slotNo(a.id)-slotNo(b.id)).slice(0,10);document.body.dataset.t=ord?R.theme:'ember';document.body.classList.toggle('view',!ord);
+ $('pw').textContent=ord?'':'Menu by MenuLoom';if(R.logo){$('lg').src=R.logo;$('lg').style.display='block'}$('ad').textContent=R.address||'';$('tb').style.display=ord&&tbl?'inline-block':'none';setL();seo();tabs();draw();reviews();applyView()}
+function applyView(){const r=ord&&V==='r';$('vt').classList.toggle('hide',!ord);$('vm').classList.toggle('on',!r);$('vr').classList.toggle('on',r);$('vm').setAttribute('aria-selected',String(!r));$('vr').setAttribute('aria-selected',String(r));['q','tabs','m'].forEach(i=>$(i).classList.toggle('hide',r));$('rv').classList.toggle('hide',!r);bar()}
+$('vm').onclick=()=>{V='m';applyView();window.scrollTo({top:0,behavior:'smooth'})};$('vr').onclick=()=>{V='r';applyView();window.scrollTo({top:0,behavior:'smooth'})};
+let cats=['All'];function tabs(){cats=['All',...new Set(items.map(i=>i.cat))]}
+function draw(){$('tabs').innerHTML='';cats.forEach(c=>{const b=document.createElement('button');b.textContent=c;b.className=c===cat?'on':'';b.onclick=()=>{cat=c;draw()};$('tabs').append(b)});
+ const s=$('q').value.toLowerCase(),m=$('m');m.innerHTML='';let last='';
+ const list=items.filter(i=>(cat==='All'||i.cat===cat)&&(i.name+(i.nameUr||'')+Object.values(i.tr||{}).map(x=>x.n||'').join(' ')).toLowerCase().includes(s)).sort((a,b)=>a.cat.localeCompare(b.cat));
+ if(!list.length)m.innerHTML='<p class="empty">'+tr(items.length?'nomatch':'empty',L)+'</p>';
+ list.forEach((i,n)=>{if(i.cat!==last){last=i.cat;const h=document.createElement('h2');h.textContent=last;m.append(h)}
+  const e=document.createElement('div');e.className='it'+(i.avail===false?' sold':'');
+  e.innerHTML=`${i.img?'<img alt="" width="88" height="88" decoding="async">':''}<div><b></b><p></p><span class="pr"></span></div><div class="q"><button class="mn" aria-label="-">&minus;</button><span class="n"></span><button class="pl" aria-label="+">+</button></div>`;
+  if(i.img){const im=e.querySelector('img');if(n>5)im.loading='lazy';im.src=i.img}e.querySelector('b').textContent=nm(i);e.querySelector('p').textContent=i.avail===false?tr('sold',L):ds(i);e.querySelector('.pr').textContent=R.currency+' '+i.price;
+  const q=e.querySelector('.q'),sync=()=>{const c=cart[i.id]||0;q.querySelector('.n').textContent=c;q.classList.toggle('on',c>0)};
+  q.querySelector('.pl').onclick=()=>{cart[i.id]=(cart[i.id]||0)+1;sync();bar()};q.querySelector('.mn').onclick=()=>{cart[i.id]=Math.max(0,(cart[i.id]||0)-1);sync();bar()};sync();m.append(e)})}
+const total=()=>items.reduce((a,i)=>a+(cart[i.id]||0)*i.price,0);
+function bar(){const n=Object.values(cart).reduce((a,b)=>a+b,0),b=$('bar');b.style.display=ord&&n&&V==='m'?'block':'none';b.textContent=(OT()==='whatsapp'?tr('order',L):dt('place',L))+` · ${n} · ${R.currency} ${total()}`}
+$('bar').onclick=async()=>{const sel=items.filter(i=>cart[i.id]),l=sel.map(i=>`${cart[i.id]} x ${i.name} - ${R.currency} ${cart[i.id]*i.price}`);
+ const tb=tbl||prompt(tr('tp',L))||'';
+ const mode=OT();{try{await addDoc(collection(db,'restaurants',slug,'orders'),{lines:l,items:sel.map(i=>({n:i.name,q:cart[i.id]})),total:total(),table:tb,ts:Date.now(),status:'new'})}catch(e){}}
+ if(mode==='dashboard'){for(const k in cart)delete cart[k];draw();bar();const o=$('ok');o.textContent=dt('order_ok',L);o.style.display='block';setTimeout(()=>o.style.display='none',5000);return}
+ location.href=`https://wa.me/${R.whatsapp}?text=${encodeURIComponent(dt('wa_new',BL())+(tb?' - '+tr('table',BL())+' '+tb:'')+'\n'+l.join('\n')+'\n'+dt('wa_total',BL())+': '+R.currency+' '+total())}`};
+function reviews(){const sec=$('rv');if(!ord||!R){sec.classList.add('hide');$('gb').classList.add('hide');return}
+ const gok=!!(R.gLink&&/^https:\/\//i.test(R.gLink));$('gbtn').classList.toggle('hide',!gok);if(gok){$('gbtn').href=R.gLink;$('gbtn').textContent='⭐ '+dt('g_btn',L)}const gr=+R.gRating;$('gb').classList.toggle('hide',!(gr>0));if(gr>0)$('gb').textContent='Google ★ '+Math.min(5,gr).toFixed(1)+(R.gCount?' ('+R.gCount+')':'');sec.classList.toggle('hide',V!=='r');$('rvh').textContent=dt('rev_title',L);const n=REV.length,avg=n?REV.reduce((a,r)=>a+r.rating,0)/n:0;$('rva').textContent=n?'★ '+avg.toFixed(1)+' · '+n:'';
+ $('rvl').replaceChildren(...REV.slice(0,5).map(r=>{const e=document.createElement('div');e.className='rvi';const b=document.createElement('b');b.textContent='★'.repeat(r.rating)+'☆'.repeat(5-r.rating);const p=document.createElement('p');p.textContent=(r.text||'')+(r.name?' — '+r.name:'');e.append(b,p);return e}));
+ $('rvn').placeholder=dt('rev_name',L);$('rvt').placeholder=dt('rev_text',L);$('rvs').textContent=dt('rev_send',L)}
+$('rvst').replaceChildren(...[1,2,3,4,5].map(n=>{const b=document.createElement('button');b.type='button';b.textContent='★';b.setAttribute('aria-label',n+'');b.onclick=()=>{stars=n;[...$('rvst').children].forEach((x,i)=>x.classList.toggle('on',i<n))};return b}));
+$('rvf').onsubmit=async e=>{e.preventDefault();if(!stars||sessionStorage['r'+slug])return;const r={rating:stars,text:$('rvt').value.trim().slice(0,500),name:$('rvn').value.trim().slice(0,40),ts:Date.now()};
+ try{await addDoc(collection(db,'restaurants',slug,'reviews'),r);sessionStorage['r'+slug]=1;REV.unshift(r);reviews();const p=document.createElement('p');p.textContent=dt('rev_thanks',L);p.style.fontWeight='800';$('rvf').replaceChildren(p);if(stars>=4&&R.gLink&&/^https:\/\//i.test(R.gLink)){const q=document.createElement('p');q.textContent=dt('g_thanks',L);const a=$('gbtn').cloneNode(true);a.id='';a.classList.remove('hide');$('rvf').append(q,a)}}catch(x){}};
+$('q').oninput=draw;
+if(!slug)fail(tr('nf',L));else{
+ let cached=null;try{cached=JSON.parse(localStorage.getItem(ck))}catch(e){}
+ if(cached&&cached.R)start(cached);
+ try{const [r,s,rv]=await Promise.all([getDoc(doc(db,'restaurants',slug)),getDocs(collection(db,'restaurants',slug,'items')),getDocs(query(collection(db,'restaurants',slug,'reviews'),orderBy('ts','desc'),limit(30))).catch(()=>({docs:[]}))]);
+  if(!r.exists()||r.data().suspended){try{localStorage.removeItem(ck)}catch(e){}R=null;$('m').innerHTML='';$('tabs').innerHTML='';$('bar').style.display='none';fail(tr(r.exists()?'ua':'nf',L))}
+  else{const d={R:r.data(),items:s.docs.map(x=>({id:x.id,...x.data()})),rev:rv.docs.map(x=>x.data())};try{localStorage.setItem(ck,JSON.stringify(d))}catch(e){}start(d);
+   if(!sessionStorage['v'+slug]){sessionStorage['v'+slug]=1;updateDoc(doc(db,'restaurants',slug),{views:increment(1)}).catch(()=>{});setDoc(doc(db,'restaurants',slug,'stats',new Date().toISOString().slice(0,10)),{day:new Date().toISOString().slice(0,10),views:increment(1)},{merge:true}).catch(()=>{})}}}
+ catch(e){if(!cached)fail(tr('nf',L),'Check your internet connection and try again.')}}
+</script></body></html>
