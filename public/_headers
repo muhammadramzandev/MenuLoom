@@ -1,0 +1,7 @@
+/*.js
+  Cache-Control: public, max-age=600
+/*.css
+  Cache-Control: public, max-age=600
+/*.png
+  Cache-Control: public, max-age=86400
+  
