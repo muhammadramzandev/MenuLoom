@@ -1,0 +1,4 @@
+# Local testing only: copy this file to .dev.vars and fill it. NEVER upload .dev.vars to GitHub.
+PADDLE_WEBHOOK_SECRET=pdl_ntfset_xxxxxxxxxxxxxxxxxxxxxxxx
+# whole service-account json on ONE line
+FIREBASE_SERVICE_ACCOUNT={"type":"service_account","project_id":"qr-code-web-e8bcb","private_key":"-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n","client_email":"firebase-adminsdk-xxxx@qr-code-web-e8bcb.iam.gserviceaccount.com"}
